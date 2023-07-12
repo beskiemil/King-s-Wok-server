@@ -24,6 +24,10 @@ mongoose.connect(process.env.CONN_STR, {
   useUnifiedTopology: true,
 });
 
+app.get('/', async (req, res) => {
+  res.json("King's Wok");
+});
+
 app.post('/register', async (req, res) => {
   const { name, lastname, email, password } = req.body;
   const oldUser = await User.findOne({ email });
