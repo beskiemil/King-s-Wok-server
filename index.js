@@ -19,7 +19,7 @@ app.use('/uploads', express.static(__dirname + '/uploads'));
 const multer = require('multer');
 const upload = multer({ dest: 'uploads' });
 
-mongoose.connect('mongodb://127.0.0.1:27017/Kings-Wok', {
+mongoose.connect(process.env.CONN_STR, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
